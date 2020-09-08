@@ -37,4 +37,8 @@ h3{
     margin-top: 10px;
 }
 
+#checkboxes input{
+  margin-right:10px
+}
+
 </style>
