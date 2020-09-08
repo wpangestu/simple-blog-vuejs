@@ -7,7 +7,7 @@
         <label>Blog Content: </label>
         <textarea v-model.lazy='blog.content'></textarea>
         <div id="checkboxes">
-            <p>Blog Categories</p>
+            <label>Blog Categories</label><br>
             <label>Cat1</label>
             <input type="checkbox" value="cat1" v-model="blog.categories"/>
             <label>Cat2</label>
@@ -17,6 +17,10 @@
             <label>Cat4</label>
             <input type="checkbox" value="cat4" v-model="blog.categories"/>
         </div>
+        <label>Author:</label><br>
+        <select v-model="blog.author">
+            <option v-for="author in authors">{{author}}</option>
+        </select>
     </form>
     <div id="preview">
         <h3>Privew Blog</h3>
@@ -27,6 +31,7 @@
         <ul>
             <li v-for="category in blog.categories">{{category}}</li>
         </ul>
+        <p>Author: {{blog.author}}</p>
 
     </div>
   </div>
@@ -39,8 +44,10 @@ export default{
         blog:{
             title:'',
             content:'',
-            categories:[]
-        }
+            categories:[],
+            author:''
+        },
+        authors:['author1','author2','author3','author4']
     }
   },
   methods:{
